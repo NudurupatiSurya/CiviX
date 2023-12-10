@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+    </head>
+<body>
+    <div class="login-container">
+        <form id="loginForm">
+            <img src="civix.png" alt="Logo" class="large-logo">
+            <h2><center>Login</center></h2>
+            <input type="text" placeholder="Username" id="username" required>
+            <input type="password" placeholder="Password" id="password" required>
+            <button type="submit">Login</button>
+            <p class="account-message">Don't have an account? <a href="createAccount.html">Create one here</a>.</p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").onsubmit = function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if(username === "admin" && password === "password") {
+                window.location.href = "home.html"; // Redirect to home page
+            } else {
+                alert("Incorrect username or password!");
+            }
+        };
+    </script>
+</body>
+</html>
